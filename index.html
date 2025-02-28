@@ -4,146 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Readline</title>
-    <!-- lien vers Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Fichier CSS pour les styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- lien vers Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Fichier CSS pour les styles -->
+    
+    <!--Partie 1 : Entrée pour la verification de l'âge-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let age = prompt("Veuillez entrer votre âge :");
+            if (age === null || age.trim() === "" || isNaN(age) || age < 18) {
+                window.location.href = "https://www.imdb.com";
+            } else {
+                document.getElementById("cookieBox").style.display = "block";
+            }
+        });
 
+        // Box de mise en garde cookies : permet d'Afficher un message concernant l'utilisation des cookies et un bouton pour accepter 
 
-</head>
-<header class="jumbotron" style="background-image: url('https://rollonjade.com/cdn/shop/articles/comment-proteger-sa-peau-des-agressions-uv-pollution-efficacement.jpg?v=1718371286'); background-size: cover; height: 600px;">
-    <div class="container">
-        <h1 style="font-family: 'Algerian', sans-serif; color: white; display: block; height: 100%; text-align: left;">
-            <span style="color: red;">Film</span> <span style="color: rgb(248, 232, 232);">Store</span>
-        </h1>
-    </div>
-    <!--Entrée pour la verification de l'âge-->
-    <div id="Verification de l'âge">
-        <h2 style="font-family: 'Algerian', sans-serif; color: white; display: block; height: 100%; text-align: left;">Veuillez entrer votre âge :</h2>
-        <input type="number" id="ageInput" class="form-control w-25 text-center" placeholder="Votre âge" min="1" max="120">
-        <button class="btn btn-primary mt-3" onclick="Verificationâge()">Confirmer</button>
-        <p id="erreur" style="color: red; display: none;">Veuillez entrer un âge valide.</p>
-    </div>
-</header>
-
-
-<script>
-    function Verificationâge() {
-        let age = document.getElementById("ageInput").value;
-        let erreur = document.getElementById("erreur");
-        
-        if (age === "" || isNaN(age) || age < 1) {
-            erreur.style.display = "block";
-            return;
+        function acceptCookies() { 
+            document.getElementById("cookieBox").style.display = "none";
+            document.getElementById("content").style.display = "block";
         }
-        
-        if (parseInt(age) >= 18) {
-            document.getElementById("Verificationâge").style.display = "none";
-            document.body.style.overflow = "auto";
-            localStorage.setItem("âgeverifié", "true");
-            document.getElementById("cookieBox").style.display = "block";
-        } else {
+
+        function refuseCookies() {
+            alert("Vous devez accepter les cookies pour accéder au site.");
             window.location.href = "https://www.imdb.com";
         }
-    }
-    window.onload = function () {
-        if (localStorage.getItem("âgeverifié") === "true") {
-            document.getElementById("Verificationâge").style.display = "none";
-            document.body.style.overflow = "auto";
-            document.getElementById("cookieBox").style.display = "block";
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
-    };
-
-</script>
-<!-- Box de mise en garde cookies : permet d'Afficher un message concernant l'utilisation des cookies et un bouton pour accepter. -->
-<div id="cookieBox">
-    Ce site utilise des cookies. 
-    <button class="btn btn-primary btn-sm" onclick="acceptCookies()">Accepter</button>
-    <button class="btn btn-primary btn-sm" onclick="refuseCookies()">Refuser</button> 
-</div>
-
-<!-- Menu Avec Navbar Bootstrap. Navbar:Documentation et exemples pour l'en-tête de navigation puissant et réactif de Bootstrap, la barre de navigation. --> 
-<!--Elle permet de Créer une barre de navigation avec des liens et des boutons pour la connexion et l'inscription.-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">MovieMarte</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Accueil</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Genre
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Drame</a></li>
-                    <li><a class="dropdown-item" href="#">Aventure</a></li>
-                    <li><a class="dropdown-item" href="#">Fantastique</a></li>
-                    <div class="dropdown-divider"></div>
-                    <li><a class="dropdown-item" href="#">Choisir autre chose ici</a></li>
-                </ul>
-            </li>
-        </ul>
-        <form class="d-flex my-2 my-lg-0">
-            <input class="form-control me-2" type="search" placeholder="🔎 Recherche" aria-label="Search">
-        </form>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-            </li>
-            <li class="nav-item">
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
-            </li>
-        </ul>
-    </div>
-</nav>
-<!-- Les Modaux de Connexion et d'Inscription: Contiennent des formulaires pour la connexion et l'inscription, intégrés via Bootstrap.-->
-<!-- Modal Login -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Connexion</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control mb-2" placeholder="Identifiant">
-                <input type="password" class="form-control mb-2" placeholder="Mot de passe">
-                <button class="btn btn-primary w-100">OK</button>
-                <button class="btn btn-secondary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#registerModal">Créer un compte</button>
-                <a href="#" class="d-block text-center mt-2">Mot de passe oublié ?</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Register -->
-<div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Inscription</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control mb-2" placeholder="Nom">
-                <input type="email" class="form-control mb-2" placeholder="E-mail">
-                <input type="password" class="form-control mb-2" placeholder="Mot de passe">
-                <input type="password" class="form-control mb-2" placeholder="Confirmer le mot de passe">
-                <select class="form-control mb-2">
-                    <option>Accepter les conditions générales</option>
-                </select>
-                <button class="btn btn-success w-100">Register</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+        #cookieBox {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 10px;
+            border: 1px solid black;
+            z-index: 1000;
+        }
+        #content {
+            display: none;
+        }
+        .login-register-container {
+            background-color: red;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .login-register-container .btn {
+            width: 150px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
 <body>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Box de mise en garde cookies -->
+    <div id="cookieBox">
+        Ce site utilise des cookies. 
+        <button class="btn btn-primary btn-sm" onclick="acceptCookies()">Accepter</button>
+        <button class="btn btn-primary btn-sm" onclick="refuseCookies()">Refuser</button> 
+    </div>
+
+    <!-- Partie 2: Menu Avec Navbar Bootstrap. Navbar:Documentation et exemples pour l'en-tête de navigation puissant et réactif de Bootstrap, la barre de navigation. --> 
+    <!--Elle permet de Créer une barre de navigation avec des liens et des boutons pour la connexion et l'inscription.-->
+
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Film Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                Genre
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Drame</a></li>
+                                <li><a class="dropdown-item" href="#">Aventure</a></li>
+                                <li><a class="dropdown-item" href="#">Fantastique</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#">Autres genres</a></li>
+                            </ul>
+                        </li>
+                        <form class="d-flex my-2 my-lg-0">
+                            <input class="form-control me-2" type="search" placeholder="🔎 Recherche" aria-label="Search">
+                        </form>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Un jumbotron est un grand bloc de contenu (souvent en haut de la page) qui occupe une place importante visuellement. -->
+        
+        <header class="jumbotron" style="background-image: url('https://rollonjade.com/cdn/shop/articles/comment-proteger-sa-peau-des-agressions-uv-pollution-efficacement.jpg?v=1718371286'); background-size: cover; height: 600px; position: relative;">
+            <div class="container">
+                <h1 style="font-family: 'Algerian', sans-serif; color: white; text-align: left;">
+                    <span style="color: red;">Film</span> <span style="color: rgb(248, 232, 232);">Store</span>
+                </h1>
+            </div>
+
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+                <h2 style="font-size: 36px; font-weight: bold;">LES DERNIERS BLOCKBUSTERS SONT ICI ✨</h2>
+                <p style="font-size: 20px;">Dans l’infini de l’espace, seul le frisson parle..</p>
+                <p style="font-size: 18px; font-weight: bold;">Action, suspense, adrénaline – Préparez-vous à vibrer !</p>
+                <p style="font-size: 70px; font-weight: bold;">_ _ _ _ </p>
+            </div>
+        </header>
+        <!-- Les Modaux de Connexion et d'Inscription: Contiennent des formulaires pour la connexion et l'inscription, intégrés via Bootstrap.-->
+        <!-- Partie 3: Login & Register -->
+        <div class="container-fluid login-register-container">
+            <div class="row justify-content-start align-items-center p-3">
+                <div class="col-auto">
+                    <span class="text-white fw-bold me-3">📞 +33 6 12 34 56 78</span>
+                    <button class="btn btn-light me-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal Login :  Ici, cela fait référence à un modal où l'utilisateur peut se connecter (via un formulaire avec un champ pour l'email et un autre pour le mot de passe) -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Connexion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control mb-2" placeholder="Identifiant">
+                        <input type="password" class="form-control mb-2" placeholder="Mot de passe">
+                        <button class="btn btn-primary">OK</button>
+                        <button class="btn btn-secondary">Créer un compte</button>
+                        <div class="form-check mt-2">
+                            <input class="form-check-input" type="checkbox" id="stayConnected">
+                            <label class="form-check-label" for="stayConnected">Rester connecté</label>
+                        </div>
+                        <a href="#">Si vous avez oublié votre mot de passe</a>
+                        <button class="btn btn-danger mt-2" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Register: Ceci crée un modal d'inscription où l'utilisateur peut entrer un nom d'utilisateur, un email et un mot de passe pour créer un compte. -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Créer un compte</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control mb-2" placeholder="Nom">
+                        <input type="email" class="form-control mb-2" placeholder="E-mail">
+                        <input type="password" class="form-control mb-2" placeholder="Mot de passe">
+                        <input type="password" class="form-control mb-2" placeholder="Confirmer le mot de passe">
+                        <select class="form-control mb-2">
+                            <option>Accepter les conditions générales d'utilisation</option>
+                        </select>
+                        <button class="btn btn-primary">Register</button>
+                        <button class="btn btn-danger mt-2" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

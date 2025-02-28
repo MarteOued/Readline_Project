@@ -1,21 +1,20 @@
 function Verificationâge() {
     const ageInput = document.getElementById('ageInput').value;
-    const errorMsg = document.getElementById('errorMsg');
+    const erreur = document.getElementById('erreur');
     if (ageInput < 1 || ageInput > 120) {
         erreur.style.display = 'block';
     } else {
         erreur.style.display = 'none';
-        // Traitement pour un âge valide
         alert('Âge validé !');
     }
 }
 // Box de mise en garde cookies 
 function accepterCookies() {
     alert("Cookies acceptés !");
-    document.getElementById('cookieBox').style.display = 'none'; // Masque la boîte
+    document.getElementById('cookieBox').style.display = 'none';
 }
 
 function refuserCookies() {
     alert("Cookies refusés !");
-    document.getElementById('cookieBox').style.display = 'none'; // Masque la boîte
+    document.getElementById('cookieBox').style.display = 'none'; 
 }
