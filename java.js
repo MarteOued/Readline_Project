@@ -9,3 +9,12 @@ function Verificationâge() {
         alert('Âge validé !');
     }
 }
+function accepterCookies() {
+    alert("Cookies acceptés !");
+    document.getElementById('cookieBox').style.display = 'none'; // Masque la boîte
+}
+
+function refuserCookies() {
+    alert("Cookies refusés !");
+    document.getElementById('cookieBox').style.display = 'none'; // Masque la boîte
+}

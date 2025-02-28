@@ -29,7 +29,7 @@
 <script>
     function Verificationâge() {
         let age = document.getElementById("ageInput").value;
-        let errorMsg = document.getElementById("erreur");
+        let erreur = document.getElementById("erreur");
         
         if (age === "" || isNaN(age) || age < 1) {
             erreur.style.display = "block";
@@ -53,10 +53,13 @@
         }
     };
 
-    function acceptCookies() {
-        document.getElementById("cookieBox").style.display = "none";
-    }
 </script>
+<!-- Box de mise en garde cookies -->
+<div id="cookieBox">
+    Ce site utilise des cookies. 
+    <button class="btn btn-primary btn-sm" onclick="acceptCookies()">Accepter</button>
+    <button class="btn btn-primary btn-sm" onclick="refuseCookies()">Refuser</button> 
+</div>
 
 
 
