@@ -9,6 +9,7 @@ function Verificationâge() {
         alert('Âge validé !');
     }
 }
+// Box de mise en garde cookies 
 function accepterCookies() {
     alert("Cookies acceptés !");
     document.getElementById('cookieBox').style.display = 'none'; // Masque la boîte
