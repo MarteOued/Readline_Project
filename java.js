@@ -1,10 +1,10 @@
-function checkAge() {
+function Verificationâge() {
     const ageInput = document.getElementById('ageInput').value;
     const errorMsg = document.getElementById('errorMsg');
     if (ageInput < 1 || ageInput > 120) {
-        errorMsg.style.display = 'block';
+        erreur.style.display = 'block';
     } else {
-        errorMsg.style.display = 'none';
+        erreur.style.display = 'none';
         // Traitement pour un âge valide
         alert('Âge validé !');
     }

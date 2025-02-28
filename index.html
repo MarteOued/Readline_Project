@@ -17,45 +17,37 @@
         </h1>
     </div>
     <!--Entrée pour la verification de l'âge-->
-
-<section style="display: flex; justify-content: space-between; gap: 40px;">
     <div id="Verification de l'âge">
         <h2 style="font-family: 'Algerian', sans-serif; color: white; display: block; height: 100%; text-align: left;">Veuillez entrer votre âge :</h2>
         <input type="number" id="ageInput" class="form-control w-25 text-center" placeholder="Votre âge" min="1" max="120">
-        <button class="btn btn-primary mt-3" onclick="checkAge()">Confirmer</button>
-        <p id="errorMsg" style="color: red; display: none;">Veuillez entrer un âge valide.</p>
+        <button class="btn btn-primary mt-3" onclick="Verificationâge()">Confirmer</button>
+        <p id="erreur" style="color: red; display: none;">Veuillez entrer un âge valide.</p>
     </div>
-
-</section>
-
-
-    
 </header>
 
 
 <script>
-    function checkAge() {
+    function Verificationâge() {
         let age = document.getElementById("ageInput").value;
-        let errorMsg = document.getElementById("errorMsg");
+        let errorMsg = document.getElementById("erreur");
         
         if (age === "" || isNaN(age) || age < 1) {
-            errorMsg.style.display = "block";
+            erreur.style.display = "block";
             return;
         }
         
         if (parseInt(age) >= 18) {
-            document.getElementById("ageVerification").style.display = "none";
+            document.getElementById("Verificationâge").style.display = "none";
             document.body.style.overflow = "auto";
-            localStorage.setItem("verifiedAge", "true");
+            localStorage.setItem("âgeverifié", "true");
             document.getElementById("cookieBox").style.display = "block";
         } else {
             window.location.href = "https://www.imdb.com";
         }
     }
-
     window.onload = function () {
-        if (localStorage.getItem("verifiedAge") === "true") {
-            document.getElementById("ageVerification").style.display = "none";
+        if (localStorage.getItem("âgeverifié") === "true") {
+            document.getElementById("Verificationâge").style.display = "none";
             document.body.style.overflow = "auto";
             document.getElementById("cookieBox").style.display = "block";
         }
