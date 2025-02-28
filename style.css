@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header.jumbotron {
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+}
+
+h2 {
+    color: #333;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+body {
+    overflow: hidden;
+}
+#Verificationâge {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+ }

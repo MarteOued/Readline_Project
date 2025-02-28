@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readline</title>
+    <!-- lien vers Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Fichier CSS pour les styles -->
+
+
+</head>
+<header class="jumbotron" style="background-image: url('https://rollonjade.com/cdn/shop/articles/comment-proteger-sa-peau-des-agressions-uv-pollution-efficacement.jpg?v=1718371286'); background-size: cover; height: 600px;">
+    <div class="container">
+        <h1 style="font-family: 'Algerian', sans-serif; color: white; display: block; height: 100%; text-align: left;">
+            <span style="color: red;">Film</span> <span style="color: rgb(248, 232, 232);">Store</span>
+        </h1>
+    </div>
+    <!--Entrée pour la verification de l'âge-->
+
+<section style="display: flex; justify-content: space-between; gap: 40px;">
+    <div id="Verification de l'âge">
+        <h2 style="font-family: 'Algerian', sans-serif; color: white; display: block; height: 100%; text-align: left;">Veuillez entrer votre âge :</h2>
+        <input type="number" id="ageInput" class="form-control w-25 text-center" placeholder="Votre âge" min="1" max="120">
+        <button class="btn btn-primary mt-3" onclick="checkAge()">Confirmer</button>
+        <p id="errorMsg" style="color: red; display: none;">Veuillez entrer un âge valide.</p>
+    </div>
+
+</section>
+
+
+    
+</header>
+
+
+<script>
+    function checkAge() {
+        let age = document.getElementById("ageInput").value;
+        let errorMsg = document.getElementById("errorMsg");
+        
+        if (age === "" || isNaN(age) || age < 1) {
+            errorMsg.style.display = "block";
+            return;
+        }
+        
+        if (parseInt(age) >= 18) {
+            document.getElementById("ageVerification").style.display = "none";
+            document.body.style.overflow = "auto";
+            localStorage.setItem("verifiedAge", "true");
+            document.getElementById("cookieBox").style.display = "block";
+        } else {
+            window.location.href = "https://www.imdb.com";
+        }
+    }
+
+    window.onload = function () {
+        if (localStorage.getItem("verifiedAge") === "true") {
+            document.getElementById("ageVerification").style.display = "none";
+            document.body.style.overflow = "auto";
+            document.getElementById("cookieBox").style.display = "block";
+        }
+    };
+
+    function acceptCookies() {
+        document.getElementById("cookieBox").style.display = "none";
+    }
+</script>
+
+
+
+
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
