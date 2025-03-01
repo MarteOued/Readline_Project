@@ -558,7 +558,357 @@
         </script>
 
     </section>
+    
+    <!--Partie 5: Section Shop Movie-->
 
+    <Section>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+        <style>
+            /* --- Conteneur Principal : Films + Vidéo --- */
+            .film-section-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                padding: 20px;
+            }
+
+            .film-list-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .film-list-title {
+                margin-left: 20px;
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .film-scroll-container {
+                display: flex;
+                gap: 15px;
+                overflow-x: auto;
+                padding: 10px;
+                max-width: 800px;
+                scroll-behavior: smooth;
+            }
+
+            .film-item {
+                text-align: center;
+                flex: 0 0 auto;
+                display: inline-block;
+            }
+
+            .film-item img {
+                width: 250px; 
+                height: 350px; 
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            /* --- Flèches de Navigation --- */
+            .film-scroll-btn {
+                background: #ff4d4d;
+                border: none;
+                color: white;
+                font-size: 24px;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: 0.3s;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .film-scroll-btn:hover {
+                background: #ff1a1a;
+            }
+
+            .film-left-btn { left: -40px; }
+            .film-right-btn { right: -40px; }
+
+            /* --- Conteneur Vidéo --- */
+            .video-section {
+                flex: 1;
+                max-width: 600px;
+            }
+
+            .film-video {
+                width: 100%;
+                height: 350px; 
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        </style>
+        <div class="film-section-wrapper">
+            <!-- Section Films -->
+            <div class="film-list-container">
+                <h2 class="film-list-title">Section Shop Movie 🎬</h2>
+    
+                <div style="position: relative; display: flex; align-items: center;">
+                    <button class="film-scroll-btn film-left-btn" onclick="scrollMovies(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="film-scroll-container" id="movies">
+                        <div class="film-item">
+                            <img src="https://th.bing.com/th/id/R.2eba211e2b7a77ba2ea4abbb898a4f82?rik=Ijzd%2fanYbxVgIg&riu=http%3a%2f%2f4.bp.blogspot.com%2f-j1QlKbW0424%2fVPdEvlmnZBI%2fAAAAAAAAAHE%2ff5OSBspz7Z4%2fs1600%2fInception-movie-poster-2.jpg&ehk=3ZToL%2bfnaX27NhhHTzU7vGoX3wVolQ7pAGDWvvsUqe8%3d&risl=&pid=ImgRaw&r=0" alt="Inception">
+                            <p class="title">Inception</p>
+                            <p class="details">2010 - Science-Fiction</p>
+                        </div>
+                        <div class="film-item">
+                            <img src="https://i.pinimg.com/736x/0a/bd/bd/0abdbddd92fbd981457c434096169baa.jpg" alt="Dune">
+                            <p class="title">Dune</p>
+                            <p class="details">2021 - Aventure</p>
+                        </div>
+                        <div class="film-item">
+                            <img src="https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SY679_.jpg" alt="Interstellar">
+                            <p class="title">Interstellar</p>
+                            <p class="details">2014 - Science-Fiction</p>
+                        </div>
+                        <div class="film-item">
+                            <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg" alt="Joker">
+                            <p class="title">Joker</p>
+                            <p class="details">2019 - Thriller</p>
+                        </div>
+                        <div class="film-item">
+                            <img src="\Users\marte\Downloads\batmanmovie-2017-comedie.jpg" alt="The Batman">
+                            <p class="title">The Batman</p>
+                            <p class="details">2022 - Action</p>
+                        </div>
+                    </div>
+                    <button class="film-scroll-btn film-right-btn" onclick="scrollMovies(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+    
+            <!-- Section Vidéo -->
+            <div class="video-section">
+                <video class="film-video" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    
+        <!-- Script JavaScript -->
+        <script>
+            function scrollMovies(direction) {
+                let container = document.getElementById("movies");
+                let scrollAmount = 300;
+    
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: "smooth"
+                });
+            }
+        </script>
+
+    </Section>
+
+    <!-- Partie 6: Section Contact Us-->
+
+    </Section>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+            <style>
+               
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .contact-section {
+                    text-align: center;
+                    padding: 50px;
+                    background: #f8f8f8;
+                }
+
+                .contact-form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
+
+                .contact-form input, .contact-form textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                .contact-form button {
+                    background: #ff4d4d;
+                    color: white;
+                    padding: 10px 15px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    transition: 0.3s;
+                }
+
+                .contact-form button:hover {
+                    background: #ff1a1a;
+                }
+
+                /* --- Map --- */
+                .map-container {
+                    margin-top: 30px;
+                    width: 100%;
+                    height: 300px;
+                }
+
+                /* --- Popup Style --- */
+                .popup {
+                    display: none;
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
+                    z-index: 1000;
+                }
+
+                .popup button {
+                    margin-top: 10px;
+                    background: #333;
+                    color: white;
+                    border: none;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+                .popup button:hover {
+                    background: red;
+                }
+
+                .popup-overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 999;
+                }
+            </style>
+        </head>
+    <body>
+
+     <!-- Section Contactez-Nous -->
+        <section class="contact-section">
+            <h2>📞 Besoin d'aide ? Contactez-nous !</h2>
+            <p>Une question, une suggestion ou juste envie de discuter ? Écrivez-nous, nous serons ravis de vous répondre !</p>
+
+            <div class="contact-form">
+                <input type="text" id="name" placeholder="Votre Nom *" required>
+                <input type="email" id="email" placeholder="Votre Email *" required>
+                <textarea id="message" rows="4" placeholder="Votre Message *" required></textarea>
+                <button onclick="showPopup()">📩 Envoyer mon message</button>
+            </div>
+
+            <!-- Carte -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12603.946738743857!2d-74.00601597207912!3d40.71277611165754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDAlMzc0JzM0LjAiTiA3NMKwMDEnNTIuMCJX!5e0!3m2!1sen!2sus!4v1611123123456" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Pop-up -->
+        <div class="popup-overlay" id="popupOverlay"></div>
+        <div class="popup" id="popup">
+            <h3>🎉 Message envoyé avec succès !</h3>
+            <p>Merci <strong><span id="popupName"></span></strong> ! Nous avons bien reçu votre message et nous vous répondrons dès que possible. 📬</p>
+            <p><strong>📧 Email :</strong> <span id="popupEmail"></span></p>
+            <p><strong>📝 Votre message :</strong></p>
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">❌ Fermer</button>
+        </div>
+
+        <!-- Script JavaScript -->
+        <script>
+            function showPopup() {
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let message = document.getElementById("message").value;
+
+                if (name === "" || email === "" || message === "") {
+                    alert("⚠️ Oups ! Tous les champs doivent être remplis avant d'envoyer votre message.");
+                    return;
+                }
+
+                document.getElementById("popupName").textContent = name;
+                document.getElementById("popupEmail").textContent = email;
+                document.getElementById("popupMessage").textContent = message;
+
+                document.getElementById("popup").style.display = "block";
+                document.getElementById("popupOverlay").style.display = "block";
+            }
+
+            function closePopup() {
+                document.getElementById("popup").style.display = "none";
+                document.getElementById("popupOverlay").style.display = "none";
+            }
+        </script>
+
+        <!-- Partie 7: Section Footer-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Création du bouton
+                let scrollTopBtn = document.createElement("button");
+                let arrowIcon = document.createElement("span");
+        
+                // Ajout du texte et icône (flèche vers le haut)
+                arrowIcon.innerHTML = "⬆️";
+                scrollTopBtn.appendChild(arrowIcon);
+        
+                // Ajout des classes et styles
+                scrollTopBtn.id = "scrollTopBtn";
+                scrollTopBtn.style.position = "fixed";
+                scrollTopBtn.style.bottom = "20px";
+                scrollTopBtn.style.right = "20px";
+                scrollTopBtn.style.width = "50px";
+                scrollTopBtn.style.height = "50px";
+                scrollTopBtn.style.background = "#ff4d4d";
+                scrollTopBtn.style.color = "white";
+                scrollTopBtn.style.border = "none";
+                scrollTopBtn.style.borderRadius = "50%";
+                scrollTopBtn.style.cursor = "pointer";
+                scrollTopBtn.style.display = "none";
+                scrollTopBtn.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)";
+                scrollTopBtn.style.transition = "opacity 0.3s ease-in-out";
+        
+                // Ajout du bouton au DOM
+                document.body.appendChild(scrollTopBtn);
+        
+                // Fonction pour gérer l'affichage du bouton
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY > 200) {
+                        scrollTopBtn.style.display = "block";
+                    } else {
+                        scrollTopBtn.style.display = "none";
+                    }
+                });
+        
+                // Fonction pour remonter en haut avec une animation fluide
+                scrollTopBtn.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            });
+        </script>
+    </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
