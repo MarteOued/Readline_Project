@@ -61,8 +61,6 @@ body {
 .social-buttons a i {
     margin-right: 10px;
 }
-
-/* Style du carrousel */
 .carousel-item {
     height: 600px;
 }
@@ -71,4 +69,82 @@ body {
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+.social-buttons {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.social-btn {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 0 25px 25px 0;
+    padding: 10px;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.social-btn i {
+    width: 30px;
+    text-align: center;
+}
+.social-btn:hover {
+    width: 150px;
+}
+.facebook { background: #3b5998; }
+.twitter { background: #1da1f2; }
+.instagram { background: #e4405f; }
+.google { background: #db4437; }
+
+.movies-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.movies-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    max-width: 800px;
+    white-space: nowrap;
+}
+
+.movie {
+    text-align: center;
+    flex: 0 0 auto;
+    display: inline-block;
+}
+
+.movie img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
 }

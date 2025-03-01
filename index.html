@@ -181,5 +181,384 @@
             </div>
         </div>
     </div>
+
+    <section>
+        <!-- Boutons Réseaux Sociaux -->
+
+        <div class="social-buttons">
+            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-btn google"><i class="fab fa-google"></i> Google</a>
+        </div>
+
+        <!-- Ajout de FontAwesome pour les icônes -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <!-- CSS -->
+        <style>
+                .social-buttons {
+                position: fixed;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                z-index: 1000;
+            }
+
+            .social-btn {
+                display: flex;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                background: #333;
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+                border-radius: 0 25px 25px 0;
+                padding: 10px;
+                transition: width 0.3s ease-in-out;
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+            }
+
+            .social-btn i {
+                width: 30px;
+                text-align: center;
+            }
+
+            .social-btn:hover {
+                width: 150px;
+            }
+
+            .facebook { background: #3b5998; }
+            .twitter { background: #1da1f2; }
+            .instagram { background: #e4405f; }
+            .google { background: #db4437; }
+
+
+        </style>
+
+        <!-- Partie 3: Section Films -->
+
+        <div class="container mt-5">
+            <h2 class="text-center">Les Hits du Grand Écran🍿</h2>
+            <div class="row">
+                <!-- Film 1 -->
+                <div class="col-md">
+                    <div class="card film-card" data-bs-toggle="modal" data-bs-target="#filmModal1">
+                        <img src="https://th.bing.com/th/id/OIP.I7Pt5K7mtwLGIiaGXzttigAAAA?rs=1&pid=ImgDetMain" class="card-img-top" alt="Sweethome">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Sweethome</h5>
+                            <p>2024 - Drame Coréen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Film 2 -->
+                <div class="col-md">
+                    <div class="card film-card" data-bs-toggle="modal" data-bs-target="#filmModal2">
+                        <img src="https://image.tmdb.org/t/p/original/uFXEoVPENgKJrkxFWlOhNMDwlEk.jpg" class="card-img-top" alt="Alice in Borderland">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Alice in Borderland</h5>
+                            <p>2021 - Action & Aventure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Film 3 -->
+                <div class="col-md">
+                    <div class="card film-card" data-bs-toggle="modal" data-bs-target="#filmModal3">
+                        <img src="https://media.senscritique.com/media/000019087799/source_big/Code_8.jpg" class="card-img-top" alt="Code 8">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Code 8</h5>
+                            <p>2019 - Thriller</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Film 4 -->
+                <div class="col-md">
+                    <div class="card film-card" data-bs-toggle="modal" data-bs-target="#filmModal4">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNDJjMzc4NGYtZmFmNS00YWY3LThjMzQtYzJlNGFkZGRiOWI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" class="card-img-top" alt="Lucifer">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Lucifer</h5>
+                            <p>2018 - Fantastique</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Film 5 -->
+                    <div class="col-md">
+                        <div class="card film-card" data-bs-toggle="modal" data-bs-target="#filmModal5">
+                            <img src="https://www.themoviedb.org/t/p/original/inong8C18HmwnKqhzAyPBlOYeLU.jpg" class="card-img-top" alt="Jumanji">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jumanji</h5>
+                                <p>1995 - Aventure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Film 1 -->
+            <div class="modal fade" id="filmModal1" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Sweethome</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/PT34ciKiMB4?si=jWk-Gy8RG8c-65Av" allowfullscreen></iframe>
+                            <p><strong>Réalisateur:</strong> Lee Eung-bok</p>
+                            <p><strong>Genre:</strong> Drame, Horreur</p>
+                            <p><strong>Acteurs:</strong> Song Kang, Lee Jin-wook</p>
+                            <p><strong>Description:</strong> Une apocalypse transforme les humains en monstres...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Film 2 -->
+            <div class="modal fade" id="filmModal2" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Alice in Borderland</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/49_44FFKZ1M" allowfullscreen></iframe>
+                            <p><strong>Réalisateur:</strong> Shinsuke Sato</p>
+                            <p><strong>Genre:</strong> Action, Science-fiction</p>
+                            <p><strong>Acteurs:</strong> Kento Yamazaki, Tao Tsuchiya</p>
+                            <p><strong>Description:</strong> Des jeunes sont piégés dans un Tokyo alternatif...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Film 3 -->
+            <div class="modal fade" id="filmModal3" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Code 8</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/PrX1JJ5dduA?si=rVGGisxUESLN3oZO" allowfullscreen></iframe>
+                            <p><strong>Réalisateur:</strong> Jeff Chan</p>
+                            <p><strong>Genre:</strong> Thriller, Science-fiction</p>
+                            <p><strong>Acteurs:</strong> Robbie Amell, Stephen Amell</p>
+                            <p><strong>Description:</strong> Un jeune homme doté de pouvoirs tente de survivre...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Film 4 (Lucifer) -->
+            <div class="modal fade" id="filmModal4" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Lucifer</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/ueMwVGBwqRo?si=W3Sx3CgWenY8K8Ba" allowfullscreen></iframe>
+                            <p><strong>Réalisateur:</strong> Tom Kapinos</p>
+                            <p><strong>Genre:</strong> Fantastique, Policier</p>
+                            <p><strong>Acteurs:</strong> Tom Ellis, Lauren German</p>
+                            <p><strong>Description:</strong> Lucifer Morningstar, lassé de l'Enfer, s'installe à Los Angeles et ouvre un club...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Film 5 (Jumanji) -->
+            <div class="modal fade" id="filmModal5" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Jumanji</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2QKg5SZ_35I?si=8VgK7vzaYLC83diq" allowfullscreen></iframe>
+                            <p><strong>Réalisateur:</strong> Joe Johnston</p>
+                            <p><strong>Genre:</strong> Aventure, Fantastique</p>
+                            <p><strong>Acteurs:</strong> Robin Williams, Kirsten Dunst</p>
+                            <p><strong>Description:</strong> Deux enfants découvrent un jeu mystérieux qui libère un monde magique et dangereux...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <!-- Partie 4: Section Featured Movies -->
+
+    <section>
+
+        <h2  style="display: flex; justify-content: space-between; gap: 40px;">Featured Movies</h2>
+
+        <!-- BOUTONS DE FILTRAGE -->
+        <div class="buttons">
+            <button onclick="filterMovies('all')">Tous</button>
+            <button onclick="filterMovies('action')">Action</button>
+            <button onclick="filterMovies('drama')">Drame</button>
+            <button onclick="filterMovies('police')">Police</button>
+        </div>
+
+        <!-- CONTENEUR DES FILMS -->
+        <div class="movies-wrapper">
+            <div class="movies-container" id="movies">
+                <!-- FILMS INITIAUX -->
+                <div class="movie action show">
+                    <img src="https://www.cinema.com/image_lib/15865_poster14.jpg" alt="Top Gun">
+                    <p class="title">Top Gun</p>
+                    <p class="details">1986 - Action</p>
+                </div>
+                <div class="movie action show">
+                    <img src="https://storage.googleapis.com/finansialku_media/wordpress_media/2022/11/5bd1c4bd-black-adam.-sumber-imdb-1.jpg" alt="Black Adam">
+                    <p class="title">Black Adam</p>
+                    <p class="details">2022 - Action</p>
+                </div>
+                <div class="movie drama show">
+                    <img src="https://media.senscritique.com/media/000019908728/source_big/Crise.jpg" alt="Crise">
+                    <p class="title">Crise</p>
+                    <p class="details">2019 - Drame</p>
+                </div>
+                <div class="movie drama show">
+                    <img src="https://fr.web.img3.acsta.net/pictures/16/03/14/17/37/177182.jpg" alt="Une seconde chance">
+                    <p class="title">Une seconde chance</p>
+                    <p class="details">2016 - Drame</p>
+                </div>
+                <div class="movie police show">
+                    <img src="https://www.cinetrafic.fr/images/affiches/original/aff_1587020190610160005.jpg" alt="Becky Lynch">
+                    <p class="title">Becky Lynch</p>
+                    <p class="details">2021 - Police</p>
+                </div>
+                <div class="movie police show">
+                    <img src="https://web.static-rmg.be/if/c_crop,w_1200,h_1600,x_0,y_0,g_center/c_fit,w_620,h_826/d4710603998e53fbcefa37761085dd6e.jpg" alt="Police">
+                    <p class="title">Police</p>
+                    <p class="details">2020 - Police</p>
+                </div>
+            </div>
+
+            <!-- BOUTON POUR PLUS/MOINS DE FILMS -->
+            <div class="button-container">
+                <button id="toggleBtn" onclick="toggleMovies()">Plus de films</button>
+            </div>
+
+            <!-- FILMS SUPPLÉMENTAIRES -->
+            <div id="extraMovies" class="movies-container hidden">
+                <div class="movie action">
+                    <img src="https://www.map24.com/wp-content/uploads/2022/06/Le-Secret-de-la-Cite-Perdue-1536x1023.jpg" alt="Le Secret de la Cité Perdue">
+                    <p class="title">Le Secret de la Cité Perdue</p>
+                    <p class="details">2022 - Action</p>
+                </div>
+                <div class="movie drama">
+                    <img src="https://th.bing.com/th/id/R.28a589252839c8914e22045b31dd32e7?rik=K4H5OGdz6HTUdg&riu=http%3a%2f%2ffr.web.img4.acsta.net%2fpictures%2f14%2f04%2f29%2f16%2f38%2f175465.jpg&ehk=eqBRBnDtQRmQC6FNEqGC%2bRkonbHMUl7XbkGK122QJLA%3d&risl=&pid=ImgRaw&r=0" alt="Un amour sans fin">
+                    <p class="title">Un amour sans fin</p>
+                    <p class="details">2014 - Drame</p>
+                </div>
+                <div class="movie police">
+                    <img src="https://th.bing.com/th/id/R.8b12a747432e79ecfb5e6abec19d3b07?rik=ELRtMABOcfhVYA&riu=http%3a%2f%2fwww.impawards.com%2fintl%2ffrance%2ftv%2fposters%2fbraqueurs_xlg.jpg&ehk=PTbDZahGAuFgye9ZO4OFK5rz84kBjNrY8qBTqhkujLo%3d&risl=&pid=ImgRaw&r=0" alt="Braqueurs">
+                    <p class="title">Braqueurs</p>
+                    <p class="details">2015 - Police</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS -->
+        <style>
+            .movies-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .movies-container {
+                display: flex;
+                overflow-x: auto;
+                gap: 20px;
+                padding: 10px;
+                max-width: 800px;
+                white-space: nowrap;
+            }
+
+            .movie {
+                text-align: center;
+                flex: 0 0 auto;
+                display: inline-block;
+            }
+
+            .movie img {
+                width: 200px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .buttons {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .button-container {
+                text-align: center;
+                margin-top: 10px;
+            }
+        </style>
+
+        <!-- JAVASCRIPT -->
+        <script>
+            function filterMovies(genre) {
+                let allMovies = document.querySelectorAll('.movie');
+                let extraMovies = document.getElementById('extraMovies');
+
+                allMovies.forEach(movie => {
+                    if (genre === 'all') {
+                        movie.style.display = 'inline-block';
+                    } else {
+                        if (movie.classList.contains(genre)) {
+                            movie.style.display = 'inline-block';
+                        } else {
+                            movie.style.display = 'none';
+                        }
+                    }
+                });
+
+                // Cacher les films supplémentaires si on filtre
+                extraMovies.classList.add('hidden');
+                document.getElementById('toggleBtn').textContent = "Plus de films";
+            }
+
+            function toggleMovies() {
+                let extraMovies = document.getElementById('extraMovies');
+                let toggleBtn = document.getElementById('toggleBtn');
+
+                if (extraMovies.classList.contains('hidden')) {
+                    extraMovies.classList.remove('hidden');
+                    toggleBtn.textContent = "Moins de films";
+                } else {
+                    extraMovies.classList.add('hidden');
+                    toggleBtn.textContent = "Plus de films";
+                }
+            }
+        </script>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
